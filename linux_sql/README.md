@@ -82,14 +82,14 @@ host_usage
 | disk_io| Number of disk I/O the machine has|
 | disk_available| T he amount of disk available in MB|
 
-#Test 
+## Test 
 This program was tested using bash scripts on a virtual machine running CentOS7. The outcome of the test was that every script ran as expected and collected and fetched the required information.
 
-#Deployment
+## Deployment
 
 The program was deployed to Git from the Linux terminal using various Git commands.
 
-#Improvemnts
+## Improvemnts
 
 1.One improvement that could have been done is checking first if Docker is available and providing an outcome scenario if Docker is not available.
 2.Another improvement can be to provide better error handling for various situations and scenarios.
