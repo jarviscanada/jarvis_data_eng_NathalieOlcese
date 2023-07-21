@@ -42,4 +42,4 @@ In order to implement this project first of all a bash script was created. The t
 4.ddl.sql: This SQL  script  contains all the information collected by the bash scripts.
 
 
-
+```
