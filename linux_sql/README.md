@@ -1,6 +1,6 @@
 # Linux Cluster Monitoring Agent
 ## Introduction
-In this project a monitoring sytem agent is impleted.The system monitors the host hardware specifaction and its usage and after monitoring them it stores this information in a database. The potential users of this MVP is a company that needs manage a cluster of machines. The information stored in the databas about each node can be veryuseful for the company in order to execute a better resource panning for futre projects .In these project the tools used were Linux command lines,Bash,Docker,crontab,PostsgresSQL, intlliJ IDE and git. The operating system of the virual machine use was centOS 7.
+In this project, a monitoring system agent is implemented. The system monitors the host hardware specification and its usage, and after monitoring them, it stores this information in a database. The potential users of this MVP are companies that need to manage a cluster of machines. The information stored in the database about each node can be very useful for the company in order to execute better resource planning for future projects. In this project, the tools used were Linux command lines, Bash, Docker, crontab, PostgreSQL, IntelliJ IDE, and Git. The operating system of the virtual machine used was CentOS 7.
 
 ## Quick Start
 ``` #create and run a psql intance using psql_docker.sh
@@ -27,7 +27,7 @@ crontab -e
 
 
 ## Implementation
-In order to implement this project first of all a bash script was created. The task of this script is to created a Doocker container than runs PostgresSQL and then stop it. After this step was completed the DDL file was created with 2 dirferent tables inside the host_agent database. The forst table is called host_info that specifies all the hardware spes and host_usage with specifies the usage of the system.To Conclude the host_info.sh and host_usage.sh  files were created so the information can be feteched to the database.
+In order to implement this project, first, a bash script was created. The task of this script is to create a Docker container that runs PostgreSQL and then stop it. After this step was completed, the DDL file was created with 2 different tables inside the host_agent database. The first table is called host_info, which specifies all the hardware specs, and host_usage, which specifies the usage of the system. To conclude, the host_info.sh and host_usage.sh files were created so the information can be fetched to the database.
 
 ## Architecture
 [Architectire image]
@@ -35,13 +35,13 @@ In order to implement this project first of all a bash script was created. The t
 
 ## Scripts 
 ```
-1.psql_docker.sh-This scripy creates the jrvs-psql Postgres Docker container, and  also has the ability to start and stop the container.It can create a pgdata volume for the container to store the database.
+1.psql_docker.sh - This script creates the jrvs-psql Postgres Docker container and also has the ability to start and stop the container. It can create a pgdata volume for the container to store the database.
 
-2.host_info.sh-This script collects the machine hardware specifications such as  memory. After collecting this information it fetches to the Postgres database.
+2.host_info.sh - This script collects the machine hardware specifications, such as memory. After collecting this information, it is fetched to the Postgres database.
 
-3.host_usage.sh-This script runs every  minute on the host machine, in order to collect information about tje hardware usage, such as the time the machine has been indle.This script is assited by contrab. It will fetch the collected information to the Postgres database.
+3.host_usage.sh - This script runs every minute on the host machine to collect information about the hardware usage, such as the time the machine has been idle. This script is assisted by cron. It will fetch the collected information to the Postgres database.
 
-4.ddl.sql: This SQL  script  contains all the information collected by the bash scripts.
+.ddl.sql: This SQL  script  contains all the information collected by the bash scripts.
 # psql_docker.sh usage:
 ./psql_docker.sh [create/start/stop] [username] [password]
 
@@ -61,14 +61,14 @@ All values must be no null
 host_info
 | Property | Description |
 | --- | --- |
-| id | Unique id identifyng each machine |
+| id | Unique id that identifies each machine |
 | hostname| Unique hostname of machine |
 | cpu_number | Number of cpu's in machine  |
 | cpu_architecture| The architecture of the machine |
 | cpu_model | The model of the machine |
 | cpu_mhz| The clock of the machine in mhz |
 | L2_cache | Size of L2 cache in KB |
-| total_mem| Amoount of total memory in KB |
+| total_mem| Amount of total memory in KB |
 | timestamp| Time in UTC when data is collected|
 
 host_usage
@@ -83,15 +83,20 @@ host_usage
 | disk_available| T he amount of disk available in MB|
 
 #Test 
-This program was test using bash scripts using a birtual machine that runs CentOS7. the outcome of the test was that every script run as expected and colectect and fetched the required information.
+This program was tested using bash scripts on a virtual machine running CentOS7. The outcome of the test was that every script ran as expected and collected and fetched the required information.
 
 #Deployment
-The program was deployed in git from the linuc teminal with different git commands.
+
+The program was deployed to Git from the Linux terminal using various Git commands.
 
 #Improvemnts
 
-1.One improvement that could have been done is check forst id docker is available and an outcome scenario if docker is not available.
-2.Another improvement can be providing a better errror handling
+1.One improvement that could have been done is checking first if Docker is available and providing an outcome scenario if Docker is not available.
+2.Another improvement can be to provide better error handling for various situations and scenarios.
+
+
+
+
 
 
 
