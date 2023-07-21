@@ -54,7 +54,7 @@ In order to implement this project, first, a bash script was created. The task o
 
 ```
 
-# Databasa Modeling
+# Database Modeling
 
 All values must be no null
 
