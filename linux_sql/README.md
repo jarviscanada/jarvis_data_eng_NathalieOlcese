@@ -22,7 +22,8 @@ psql -h localhost -U [username] -d host_agent -f ./sql/ddl.sql
 #setup Contrab
 crontab -e
 #this has to be added to run host_usage.sh every minute and dave the data
-* * * * * bash /global/path/to/host_usage.sh localhost 5432 host_agent [username] [password] >> /tmp/host_usage.log 2>&1```
+* * * * * bash /global/path/to/host_usage.sh localhost 5432 host_agent [username] [password] >> /tmp/host_usage.log 2>&1
+```
 
 
 ##Implementation
