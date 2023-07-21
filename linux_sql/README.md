@@ -26,14 +26,14 @@ crontab -e
 ```
 
 
-##Implementation
+## Implementation
 In order to implement this project first of all a bash script was created. The task of this script is to created a Doocker container than runs PostgresSQL and then stop it. After this step was completed the DDL file was created with 2 dirferent tables inside the host_agent database. The forst table is called host_info that specifies all the hardware spes and host_usage with specifies the usage of the system.To Conclude the host_info.sh and host_usage.sh  files were created so the information can be feteched to the database.
 
-##Architecture
+## Architecture
 
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2K2vGdPpdeVcKjJer5dW2d%2FUntitled%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3DMxgKKT7rWdr40i7l-1" allowfullscreen></iframe>
 
-##Scripts Description
+## Scripts Description
 ```
 1.psql_docker.sh-This scripy creates the jrvs-psql Postgres Docker container, and  also has the ability to start and stop the container.It can create a pgdata volume for the container to store the database.
 
