@@ -4,23 +4,23 @@ In this project a monitoring sytem agent is impleted.The system monitors the hos
 
 ## Quick Start
 >#create and run a psql intance using psql_docker.sh
-export PGPASSWORD=[password]
-psql -h localhost -U [username] -c "CREATE DATABASE host_agent;"
-psql -h localhost -U [username] -d host_agent -f ./sql/ddl.sql
+>export PGPASSWORD=[password]
+>psql -h localhost -U [username] -c "CREATE DATABASE host_agent;"
+>psql -h localhost -U [username] -d host_agent -f ./sql/ddl.sql
 
-#create the required tables
-export PGPASSWORD=[password]
-psql -h localhost -U [username] -c "CREATE DATABASE host_agent;"
-psql -h localhost -U [username] -d host_agent -f ./sql/ddl.sql
+>#create the required tables
+>export PGPASSWORD=[password]
+>psql -h localhost -U [username] -c "CREATE DATABASE host_agent;"
+>psql -h localhost -U [username] -d host_agent -f ./sql/ddl.sql
 
-#insert the hardware specs in the database
-./scripts/host_info.sh localhost 5432 host_agent [username] [password]
+>#insert the hardware specs in the database
+>./scripts/host_info.sh localhost 5432 host_agent [username] [password]
 
-#insert the hardware usage information in the database
-./scripts/host_usage.sh localhost 5432 host_agent [username] [password]
+>#insert the hardware usage information in the database
+>./scripts/host_usage.sh localhost 5432 host_agent [username] [password]
 
-#setup Contrab
-crontab -e
-#this has to be added to run host_usage.sh every minute and dave the data
-* * * * * bash /global/path/to/host_usage.sh localhost 5432 host_agent [username] [password] >> /tmp/host_usage.log 2>&1
+>#setup Contrab
+>crontab -e
+>#this has to be added to run host_usage.sh every minute and dave the data
+>* * * * * bash /global/path/to/host_usage.sh localhost 5432 host_agent [username] [password] >> /tmp/host_usage.log 2>&1
 
