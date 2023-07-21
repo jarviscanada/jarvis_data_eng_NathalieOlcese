@@ -31,5 +31,15 @@ In order to implement this project first of all a bash script was created. The t
 
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F2K2vGdPpdeVcKjJer5dW2d%2FUntitled%3Ftype%3Ddesign%26node-id%3D0%253A1%26mode%3Ddesign%26t%3DMxgKKT7rWdr40i7l-1" allowfullscreen></iframe>
 
+##Scripts Description
+```
+1.psql_docker.sh-This scripy creates the jrvs-psql Postgres Docker container, and  also has the ability to start and stop the container.It can create a pgdata volume for the container to store the database.
+
+2.host_info.sh-This script collects the machine hardware specifications such as  memory. After collecting this information it fetches to the Postgres database.
+
+3.host_usage.sh-This script runs every  minute on the host machine, in order to collect information about tje hardware usage, such as the time the machine has been indle.This script is assited by contrab. It will fetch the collected information to the Postgres database.
+
+4.ddl.sql: This SQL  script  contains all the information collected by the bash scripts.
+
 
 
