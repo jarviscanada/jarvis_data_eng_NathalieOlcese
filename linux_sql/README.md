@@ -24,3 +24,6 @@ crontab -e
 #this has to be added to run host_usage.sh every minute and dave the data
 * * * * * bash /global/path/to/host_usage.sh localhost 5432 host_agent [username] [password] >> /tmp/host_usage.log 2>&1```
 
+#Implementation
+In order to implement this project first of all a bash script was created. The task of this script is to created a Doocker container than runs PostgresSQL and then stop it. After this step was completed the DDL file was created with 2 dirferent tables inside the host_agent database. The forst table is called host_info that specifies all the hardware spes and host_usage with specifies the usage of the system.To Conclude the host_info.sh and host_usage.sh  files were created so the information can be feteched to the database.
+
