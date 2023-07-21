@@ -1,2 +1,3 @@
 # Linux Cluster Monitoring Agent
-This project is under development. Since this project follows the GitFlow, the final work will be merged to the main branch after Team Code Team.
+## Introduction
+In this project a monitoring sytem agent is impleted.The system monitors the host hardware specifaction and its usage and after monitoring them it stores this information in a database. The potential users of this MVP is a company that needs manage a cluster of machines. The information stored in the databas about each node can be veryuseful for the company in order to execute a better resource panning for futre projects .In these project the tools used were Linux command lines,Bash,Docker,crontab,PostsgresSQL, intlliJ IDE and git. The operating system of the virual machine use was centOS 7.
