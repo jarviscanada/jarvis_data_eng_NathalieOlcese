@@ -4,7 +4,7 @@ function print_usage {
   echo "Usage: $0 <psql_host> <psql_port> <db_name> <psql_user> <psql_password>"
 }
 
-# Check the number of arguments
+
 if [ "$#" -ne 5 ]; then
   echo "Error: number of parameters is not valid"
   print_usage
@@ -67,7 +67,7 @@ END
 
 export PGPASSWORD="$psql_password"
 
-# Insert host usage into the database
+
 psql -h "$psql_host" -p "$psql_port" -d "$db_name" -U "$psql_user" -c "$insert_stmt"
 
 if [ $? -ne 0 ]; then
@@ -75,7 +75,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "Host usage inserted."
+echo "Host usage was inserted."
 
 exit 0
 
