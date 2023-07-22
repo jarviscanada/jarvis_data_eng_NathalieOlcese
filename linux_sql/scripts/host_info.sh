@@ -1,5 +1,4 @@
 #!/bin/bash
-
 function print_usage {
   echo "Usage: $0 <psql_host> <psql_port> <db_name> <psql_user> <psql_password>"
 }
