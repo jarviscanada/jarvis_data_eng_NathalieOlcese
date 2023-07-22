@@ -1,4 +1,4 @@
--- Create host_info table
+--  host_info 
 CREATE TABLE IF NOT EXISTS host_info (
   id SERIAL NOT NULL,
   hostname VARCHAR NOT NULL,
@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS host_info (
   CONSTRAINT positive_total_mem CHECK (total_mem > 0)
 );
 
--- Create host_usage table
+--  host_usage 
 CREATE TABLE IF NOT EXISTS host_usage (
   timestamp TIMESTAMP WITH TIME ZONE NOT NULL,
   host_id INTEGER NOT NULL REFERENCES host_info (id) ON DELETE CASCADE,
