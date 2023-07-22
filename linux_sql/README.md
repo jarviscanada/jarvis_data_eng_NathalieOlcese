@@ -51,7 +51,8 @@ In order to implement this project, first, a bash script was created. The task o
 ./host_info.sh [host] [port] [database] [username] [password]
 
 #host_usage.sh usage:
-./host_usage.sh [host] [port] [database] [username] [password] ```
+./host_usage.sh [host] [port] [database] [username] [password]
+```
 
 
 ## Database Modeling
@@ -60,29 +61,29 @@ All values must be no null
 
 host_info
 
-|Property|	|Description|
+|Property|Description|
 | --- | --- |
-|id||	Unique id that identifies each machine|
-|hostname|	|Unique hostname of machine|
-|cpu_number|	|Number of cpu's in machine|
-|cpu_architecture|	|The architecture of the machine|
-|cpu_model|	|The model of the machine|
-|cpu_mhz||	The clock of the machine in mhz|
-|L2_cache|	|Size of L2 cache in KB|
-|total_mem||	Amount of total memory in KB|
-|timestamp|	|Time in UTC when data is collected|
+|id|Unique id that identifies each machine|
+|hostname|Unique hostname of machine|
+|cpu_number|Number of cpu's in machine|
+|cpu_architecture|The architecture of the machine|
+|cpu_model|The model of the machine|
+|cpu_mhz|The clock of the machine in mhz|
+|L2_cache|Size of L2 cache in KB|
+|total_mem|Amount of total memory in KB|
+|timestamp|Time in UTC when data is collected|
 
 host_usage
 
-|Property||Description|
+|Property|Description|
 | --- | --- |
-| timestamp| | 	Timestamp in UTC when data was collected| 
-| host_id	| | Unique if of host machine| 
-| memory_free| | 	Amount of free memory in KB| 
-| cpu_idle| | 	The percentage of the CPU that is idle| 
-| cpu_kernel| | 	The model of the CPU that is used by the kernel| 
-| disk_io| | 	Number of disk I/O the machine has| 
-| disk_available| | 	The amount of disk available in MB| 
+| timestamp|Timestamp in UTC when data was collected| 
+| host_id	| Unique if of host machine| 
+| memory_free|	Amount of free memory in KB| 
+| cpu_idle|The percentage of the CPU that is idle| 
+| cpu_kernel|The model of the CPU that is used by the kernel| 
+| disk_io|Number of disk I/O the machine has| 
+| disk_available|The amount of disk available in MB| 
 
 ## Test
 
