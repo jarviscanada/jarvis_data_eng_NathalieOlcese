@@ -4,7 +4,7 @@ function print_usage {
   echo "Usage: $0 <psql_host> <psql_port> <db_name> <psql_user> <psql_password>"
 }
 
-# Check the number of arguments
+
 if [ "$#" -ne 5 ]; then
   echo "Error: number of parameters is not valid"
   print_usage
@@ -23,7 +23,7 @@ if ! [[ "$psql_port" =~ ^[0-9]+$ ]]; then
   exit 1
 fi
 
-# CPU and memory info
+
 lscpu_out=$(lscpu)
 meminfo_out=$(cat /proc/meminfo)
 
