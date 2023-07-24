@@ -13,14 +13,14 @@ case $command in
   create)
     # Check if jrvs-psql already exists in system
     if [[ $(docker container ls -a -f name=jrvs-psql | wc -l) -eq 2 ]]; then
-      echo "Warning: jrvs-psql container is already created"
+      echo "Warning: jrvs-psql container already exists"
       echo "USAGE: ./psql_docker.sh start|stop|create [db_username][db_password]"
       exit 0
     fi
 
   
     if [[ -z "$db_username" || -z "$db_password" ]]; then
-      echo "Error: Username or password is not specified"
+      echo "Error: Username or password has not been specified"
       echo echo "USAGE: ./psql_docker.sh start|stop|create [db_username][db_password]"
       exit 1
     fi
@@ -51,7 +51,7 @@ case $command in
     ;;
 
   *)
-    echo "Error: valid arguments were not provides"
+    echo "Error: valid arguments were not provided"
     echo "USAGE: ./psql_docker.sh start|stop|create [db_username][db_password]"
     exit 1
     ;;
