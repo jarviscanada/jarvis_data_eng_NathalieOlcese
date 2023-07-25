@@ -97,5 +97,6 @@ The program was deployed to Git from the Linux terminal using various Git comman
 
 1.One improvement that could have been done is checking first if Docker is available and providing an outcome scenario if Docker is not available.
 2.Another improvement can be to provide better error handling for various situations and scenarios.
+3. Sql qeries could have been created to generate reports
 
 
