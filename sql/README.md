@@ -131,7 +131,8 @@ select distinct mems.firstname || ' ' ||  mems.surname as member,
 	from 
 		cd.members mems
 order by member;
-      ```
+```
+
 This script displays a list of how many members each member has recommended  order by id
 ```
 select recommendedby, count(*) 
