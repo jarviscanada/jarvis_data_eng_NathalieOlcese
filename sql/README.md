@@ -2,7 +2,7 @@
 
 ## introduction
 
-In this project different sql queries were use in order to ouput the ata ruquired different types of SQL commands were used such as GROUP BY , WHERE,HAVING. Many type od sql operation ere perfomed such as agrregations and joins. In some of the sql queries some other script could have also returned the desired output by the parctice but in each of the script the most simple query was selected since it is agood pratcice to always use the simplest query with less commands. 
+In this project, different SQL queries were used in order to output the required data. Various types of SQL commands were employed, including GROUP BY, WHERE, and HAVING. Many types of SQL operations were performed, such as aggregations and joins. While some of the SQL queries could have been achieved using alternative scripts, the practice was to select the most straightforward query in each case. This approach is considered good practice, as it encourages using the simplest query with fewer commands.
 
 ## Scripts
 This script insterts a new record in the facilities table
@@ -222,7 +222,7 @@ select substr (mems.surname,1,1) as letter, count(*) as count
 ```
 
 ## Tables Setup
-All tables where constructed specifying their field and primary keys ad well ad forign keys in order to identify the relatiomship between the tables. In ther vitual machine we loaded sample data.
+All tables were constructed by specifying their fields, primary keys, and foreign keys to identify the relationships between the tables. In the virtual machine, we loaded sample data.
 
 ## Tables
 
