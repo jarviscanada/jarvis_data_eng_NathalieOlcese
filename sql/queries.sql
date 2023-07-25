@@ -2,9 +2,13 @@ insert into cd.facilities
     (facid, name, membercost, guestcost, initialoutlay, monthlymaintenance)
     values (9, 'Spa', 20, 30, 100000, 800);
 
-nsert into cd.facilities
+insert into cd.facilities
     (facid, name, membercost, guestcost, initialoutlay, monthlymaintenance)
     select (select max(facid) from cd.facilities)+1, 'Spa', 20, 30, 100000, 800;  
+
+update cd.facilities
+    set initialoutlay = 10000
+    where facid = 1;    
 
 update cd.facilities facs
     set
