@@ -16,11 +16,7 @@ update cd.facilities facs
         guestcost = (select guestcost * 1.1 from cd.facilities where facid = 0)
     where facs.facid = 1;  
 
-update cd.facilities facs
-    set
-        membercost = (select membercost * 1.1 from cd.facilities where facid = 0),
-        guestcost = (select guestcost * 1.1 from cd.facilities where facid = 0)
-    where facs.facid = 1;          
+       
 
 truncate cd.bookings;
 
