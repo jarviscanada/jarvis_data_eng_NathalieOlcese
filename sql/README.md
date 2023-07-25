@@ -103,7 +103,7 @@ select bks.starttime as start, facs.name as name
 		bks.starttime < '2012-09-22'
 order by bks.starttime; 
 ```
-this list produce the list of member and the member that reocmemnded name order by surname,firstname
+this scroipt produces the list of member and the member that reocmemnded name order by surname,firstname
 ```
 select mems.firstname as memfname, mems.surname as memsname, recs.firstname as recfname, recs.surname as recsname
 	from 
@@ -112,7 +112,7 @@ select mems.firstname as memfname, mems.surname as memsname, recs.firstname as r
 			on recs.memid = mems.recommendedby
 order by memsname, memfname; 
 ```
-This script display the list of member who recommendedanother member without duplicate snad ordered by surname, firstname
+This script displays the list of members who recommendedanother member without duplicate snad ordered by surname, firstname
 ```
 select distinct recs.firstname as firstname, recs.surname as surname
 	from 
@@ -122,6 +122,7 @@ select distinct recs.firstname as firstname, recs.surname as surname
 order by surname, firstname;          
 ```
 This script produces the list of member and the member who recomended them with no joins and ordered by surname,firstname
+```
 select distinct mems.firstname || ' ' ||  mems.surname as member,
 	(select recs.firstname || ' ' || recs.surname as recommender 
 		from cd.members recs 
@@ -130,7 +131,7 @@ select distinct mems.firstname || ' ' ||  mems.surname as member,
 	from 
 		cd.members mems
 order by member;
-      
+      ```
 select recommendedby, count(*) 
 	from cd.members
 	where recommendedby is not null
