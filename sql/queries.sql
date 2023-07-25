@@ -48,3 +48,99 @@ select surname
 union
 select name
 	from cd.facilities; 
+
+
+select bks.starttime 
+	from 
+		cd.bookings bks
+		inner join cd.members mems
+			on mems.memid = bks.memid
+	where 
+		mems.firstname='David' 
+		and mems.surname='Farrell';   
+
+select bks.starttime as start, facs.name as name
+	from 
+		cd.facilities facs
+		inner join cd.bookings bks
+			on facs.facid = bks.facid
+	where 
+		facs.name in ('Tennis Court 2','Tennis Court 1') and
+		bks.starttime >= '2012-09-21' and
+		bks.starttime < '2012-09-22'
+order by bks.starttime; 
+
+select mems.firstname as memfname, mems.surname as memsname, recs.firstname as recfname, recs.surname as recsname
+	from 
+		cd.members mems
+		left outer join cd.members recs
+			on recs.memid = mems.recommendedby
+order by memsname, memfname; 
+
+select distinct recs.firstname as firstname, recs.surname as surname
+	from 
+		cd.members mems
+		inner join cd.members recs
+			on recs.memid = mems.recommendedby
+order by surname, firstname;          
+
+
+select recommendedby, count(*) 
+	from cd.members
+	where recommendedby is not null
+	group by recommendedby
+order by recommended
+
+select recommendedby, count(*) 
+	from cd.members
+	where recommendedby is not null
+	group by recommendedby
+order by recommendedby;
+
+select facid, sum(slots) as "Total Slots"
+	from cd.bookings
+	where
+		starttime >= '2012-09-01'
+		and starttime < '2012-10-01'
+	group by facid
+order by sum(slots);   
+
+select facid, extract(month from starttime) as month, sum(slots) as "Total Slots"
+	from cd.bookings
+	where extract(year from starttime) = 2012
+	group by facid, month
+order by facid, month;      
+
+select count(distinct memid) from cd.bookings  
+
+	from cd.bookings bks
+	inner join cd.members mems on
+		mems.memid = bks.memid
+	where starttime >= '2012-09-01'
+	group by mems.surname, mems.firstname, mems.memid
+order by mems.memid; 
+
+select count(*) over(), firstname, surname
+	from cd.members
+order by joindate          
+
+select row_number() over(order by joindate), firstname, surname
+	from cd.members
+order by joindate          
+
+select facid, total from (
+	select facid, sum(slots) total, rank() over (order by sum(slots) desc) rank
+        	from cd.bookings
+		group by facid
+	) as ranked
+	where rank = 1          
+
+	
+select surname || ', ' || firstname as name from cd.members    
+
+select memid, telephone from cd.members where telephone ~ '[()]';   
+
+select substr (mems.surname,1,1) as letter, count(*) as count 
+    from cd.members mems
+    group by letter
+    order by letter         
