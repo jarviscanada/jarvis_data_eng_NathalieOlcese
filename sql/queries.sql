@@ -17,7 +17,6 @@ update cd.facilities facs
     where facs.facid = 1;  
 
        
-
 truncate cd.bookings;
 
 delete from cd.members where memid = 37;   
