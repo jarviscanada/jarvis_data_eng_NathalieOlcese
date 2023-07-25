@@ -19,7 +19,7 @@ insert into cd.facilities
     select (select max(facid) from cd.facilities)+1, 'Spa', 20, 30, 100000, 800;  
 ```
 
-this sctript modify the  the outlay in the facilities table
+this sctript modifies the  the outlay in the facilities table
 ```
 
 update cd.facilities
@@ -36,7 +36,7 @@ update cd.facilities facs
 ```
 
  This script delete the data from the bookins table      
-````
+```
 truncate cd.bookings;
 ```
 This script deletes an record from the members table that has an specific characteristic
