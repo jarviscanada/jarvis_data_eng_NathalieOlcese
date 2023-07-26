@@ -273,7 +273,8 @@ cd.bookings
        CONSTRAINT fk_bookings_facid FOREIGN KEY (facid) REFERENCES cd.facilities(facid),
        CONSTRAINT fk_bookings_memid FOREIGN KEY (memid) REFERENCES cd.members(memid)
     );
-          ```
 
-## Testing
+ ```
+
+## Test 
 All tests  were poduced with the sampe data on the virtual machine. All test were passed for each of the queries run agians all difeferent constructed tables. 
