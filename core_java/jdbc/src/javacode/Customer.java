@@ -1,24 +1,21 @@
 import lombok.Builder;
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.ToString;
+import lombok.Value;
 
-@Getter
-@ToString
+@Value
 @Builder(toBuilder = true)
 public class Customer implements DTO {
 
-    private final long id;
-    @NonNull
-    private final String firstName;
-    @NonNull
-    private final String lastName;
-    @NonNull
-    private final String email;
-    private final String phone;
-    private final String address;
-    private final String city;
-    private final String state;
-    private final String zipCode;
+    long id;
+    String firstName;
+    String lastName;
+    String email;
+    String phone;
+    String address;
+    String city;
+    String state;
+    String zipCode;
 
-    }
+
+}
+
+
