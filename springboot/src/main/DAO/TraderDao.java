@@ -1,5 +1,3 @@
-package ca.jrvs.apps.trading.dao;
-
 import ca.jrvs.apps.trading.model.domain.Trader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
