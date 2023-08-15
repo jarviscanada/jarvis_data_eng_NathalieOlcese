@@ -1,5 +1,3 @@
-
-
 import ca.jrvs.apps.trading.model.domain.Entity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
