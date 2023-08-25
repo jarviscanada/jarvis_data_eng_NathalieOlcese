@@ -1,0 +1,55 @@
+package ca.jrvs.apps.trading.model.domain;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "position")
+public class Position implements Entity<Integer> {
+
+    @Id
+    @NotNull
+    private Integer accountId;
+
+    @NotNull
+    private String ticker;
+
+    @NotNull
+    private Integer position;
+
+    @Override
+    public Integer getId() {
+        return accountId;
+    }
+
+    @Override
+    public void setId(Integer id) {
+        this.accountId = id;
+    }
+
+    public Integer getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(Integer accountId) {
+        this.accountId = accountId;
+    }
+
+    public String getTicker() {
+        return ticker;
+    }
+
+    public void setTicker(String ticker) {
+        this.ticker = ticker;
+    }
+
+    public Integer getPosition() {
+        return position;
+    }
+
+    public void setPosition(Integer position) {
+        this.position = position;
+    }
+}
