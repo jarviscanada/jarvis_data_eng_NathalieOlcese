@@ -49,9 +49,27 @@ After an app like Postman can be used to send a request to the tradinn app. The 
 ## Implementation
 
 ### Architecture
-
+[https://www.figma.com/file/O4VV6XFgDJLDl5Xa6e7QqS/Spring_Boot_Architecture?type=design&node-id=0%3A1&mode=design&t=PnF04GrDF7frZSix-1]
 In the app first a rquest us received by the server that has the WebServlet container and environment so thejava code executes. The request is passed by oen of the controllers that is mapped to receipe the type of reciveing request in the controller layer. The controller then hanldes the rquest by calling the needed services to accomplish thr rquest and send the reponnse to the user.
 
-the service are invoked from the service layer .
+the service are invoked from the service layer. It provides abastraction to the class that performs operations with the model. The services call their DAO componet and manahe that model.
+
+The DAO comunicates with the dtavase API . JDBCCrudDao is an abstract object that has abstracted the common logic out of all the other DAOs. The MarketDataDao comunivates with  IEX Cloud to fetch the most uodated ypdated stock information.For this DAO, it uses an HTTP Client object to assist in making the request to IEX Cloud API using an API key.
+
+### REST API Usage
+
+### Swagger
+Swagger is an inteface that let users acces an application in the browser 
+
+### Quote controller
+users can get the most upfate information from the quotes by using the quote controller . Users can add tickets. . The market data itself is coming from the IEX Cloud APIs, and the data is cached in a Postgres database.
+
+Endpoints:
+
+GET : Get the latest stock information for the given ticker
+PUT : Update the stock information for every quote in the daily list
+PUT : Add the given quote to the daily list
+POST : Get the quote for the given ticker from IEX Cloud and save the information in the daily list
+GET dailylist: Get the daily list
 
 
