@@ -50,7 +50,8 @@ After an app like Postman can be used to send a request to the tradinn app. The 
 
 ### Architecture
 
-In the app first a rquest us received by the server that has the WebServlet container and environment so thejava code executes
+In the app first a rquest us received by the server that has the WebServlet container and environment so thejava code executes. The request is passed by oen of the controllers that is mapped to receipe the type of reciveing request in the controller layer. The controller then hanldes the rquest by calling the needed services to accomplish thr rquest and send the reponnse to the user.
 
+the service are invoked from the service layer .
 
 
