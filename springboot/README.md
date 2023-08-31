@@ -65,11 +65,37 @@ Swagger is an inteface that let users acces an application in the browser
 users can get the most upfate information from the quotes by using the quote controller . Users can add tickets. . The market data itself is coming from the IEX Cloud APIs, and the data is cached in a Postgres database.
 
 Endpoints:
+* GET /iex/ticker/{ticker}: Get the latest stock information for the given ticker
+* PUT /iexMarketData: Update the stock information for every quote in the daily list
+* PUT /: Add the given quote to the daily list
+* POST /tickerId/{tickerId}: Get the quote for the given ticker from IEX Cloud and save the information in the daily list
+* GET /dailyList: Get the daily list
 
-GET : Get the latest stock information for the given ticker
-PUT : Update the stock information for every quote in the daily list
-PUT : Add the given quote to the daily list
-POST : Get the quote for the given ticker from IEX Cloud and save the information in the daily list
-GET dailylist: Get the daily list
+### Trader Controller
+The trader contoller allows users to manage traders and account information to mange funds in an account from a trader.
+
+Endpoints:
+* POST /firstname/{firstname}/lastname/{lastname}/dob/{dob}/country/{country}/email/{email}: Add a new trader to the database with the given information.
+* POST /: Add a new trader to the database with the given information from the request's body in the JSON format.
+* DELETE /traderId/{traderId}: Delete the trader with the given ID, as long as the account is empty, and it has no open positions.
+* PUT /deposit/traderId/{traderId}/amount/{amount}: Deposit funds to a trader's account using the supplied trader's ID and amount fields.
+* PUT /withdraw/traderId/{traderId}/amount/{amount}: Withdraw funds from a trader's account using the supplied trader's ID and amount fields.
+
+## Test
+The application is tested using JUnit. Integrestiosn test wehre perfomerd for every level . The code coverage is 80%
+
+### Deployment 
+Docker contaneris the Postgres database an the application
+
+The Postgres database container was made using the postgres:9.6-alpine image, and two SQL scripts were copied to its docker-entrypoint-initdb.d directory so that Postgres would load the files if it finds that its database is empty.
+
+The trading app container was made by moving our source code into a maven:3.6-jdk-8-slim image, and get Maven to package our application. Then we the produced Jar file was moved to an openjdk:8-alpine image and set its entry point to execute Jar file in a JVM, which will run the webserver.
+
+## Improvements
+
+
+
+
+
 
 
