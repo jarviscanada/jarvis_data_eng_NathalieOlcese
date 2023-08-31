@@ -93,8 +93,8 @@ The trading app container was made by moving our source code into a maven:3.6-jd
 
 ## Improvements
 
-
-
+1. implement the order and the dashboard component
+2. Implement the app with JPA
 
 
 
