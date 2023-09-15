@@ -1,0 +1,34 @@
+package ca.jrvs.apps.trading.model.view;
+
+import ca.jrvs.apps.trading.model.domain.Account;
+import ca.jrvs.apps.trading.model.domain.Trader;
+
+public class TraderAccountView {
+
+    private final Trader trader;
+    private final Account account;
+
+    public TraderAccountView(Trader trader, Account account) {
+        if (trader == null || account == null) {
+            throw new IllegalArgumentException("Trader and account must not be null");
+        }
+        this.trader = trader;
+        this.account = account;
+    }
+
+    public Trader getTrader() {
+        return trader;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    @Override
+    public String toString() {
+        return "TraderAccountView{" +
+                "trader=" + trader +
+                ", account=" + account +
+                '}';
+    }
+}
